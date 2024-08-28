@@ -1,0 +1,214 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="Public">
+    <title>PILA - Tecnologia Informatica DELTA.</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <link rel="shortcut icon" href="ruta/a/tu/favicon.ico" type="image/x-icon"> <!-- Cambia a tu favicon -->
+    <link rel="icon" href="ruta/a/tu/favicon.ico" type="image/x-icon"> <!-- Cambia a tu favicon -->
+    <link type="text/css" rel="stylesheet" href="ruta/a/tu/unico.css"> <!-- Cambia a tu CSS -->
+    <link type="text/css" rel="stylesheet" href="ruta/a/tu/pager.css"> <!-- Cambia a tu CSS -->
+    <link type="text/css" rel="stylesheet" href="ruta/a/tu/bootstrap.css"> <!-- Cambia a tu CSS -->
+    <script src="ruta/a/tu/jquery.min.js"></script> <!-- Cambia a tu jQuery -->
+    <script src="ruta/a/tu/jquery.validate.js"></script> <!-- Cambia a tu jQuery Validate -->
+    <script src="ruta/a/tu/bootstrap.js"></script> <!-- Cambia a tu Bootstrap JS -->
+    <script src="ruta/a/tu/allTidelta.js"></script> <!-- Cambia a tu JS -->
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style>
+</head>
+<body>
+    <div id="loadingImgBar" style="display:none">
+        <div id="ventana" class="contenedorLoading">
+            <img src="ruta/a/tu/loading.gif"> <!-- Cambia a tu imagen de carga -->
+            <br><b>Cargando...</b>
+        </div>
+    </div>
+    <div class="contenedor">
+        <header>
+            <div class="logo">
+                <img src="ruta/a/tu/logo.png" alt="TI DELTA" width="200" height="55"> <!-- Cambia a tu logo -->
+            </div>
+        </header>
+        <script>
+            $(document).ready(function() {
+                var timeControl = $("#controlTime").height();
+                var menuControl = $("#menOperaciones").height();
+                var conPagina = $(".contenedorConta").height();
+                heightInfo = (conPagina - (timeControl + menuControl + 31));
+                $(".leyoutChat").css("height", heightInfo + "px");
+            });
+        </script>
+        <contenido>
+            <!-- Ini - Menu de la derecha -->
+            
+                <div style="height: 100px;" id="controlTime">
+                    <li class="nav-header" style="background: #0072C6; color: #fff">cierre operadores</li>
+                    <div id="countdown_2" data="2" class="countdown" style="margin-top:10px;">
+                        <div class="dash hours_dash">
+                            <span class="dash_title">horas</span>
+                            <div class="digit">
+                                <div class="top" style="display: none;">0</div>
+                                <div class="bottom" style="display: block;">0</div>
+                            </div>
+                            <div class="digit">
+                                <div class="top" style="display: none;">1</div>
+                                <div class="bottom" style="display: block;">1</div>
+                            </div>
+                        </div>
+                        <div class="dash minutes_dash">
+                            <span class="dash_title">minutos</span>
+                            <div class="digit">
+                                <div class="top" style="display: none;">2</div>
+                                <div class="bottom" style="display: block;">2</div>
+                            </div>
+                            <div class="digit">
+                                <div class="top" style="display: none;">6</div>
+                                <div class="bottom" style="display: block;">6</div>
+                            </div>
+                        </div>
+                        <div class="dash seconds_dash">
+                            <span class="dash_title">segundos</span>
+                            <div class="digit">
+                                <div class="top" style="display: block; overflow: hidden; height: 3.46e-05px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">2</div>
+                                <div class="bottom" style="display: block; overflow: hidden; height: 0px;">3</div>
+                            </div>
+                            <div class="digit">
+                                <div class="top" style="display: block; overflow: hidden; height: 3.46e-05px; padding-top: 0px; margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;">9</div>
+                                <div class="bottom" style="display: block; overflow: hidden; height: 0px;">0</div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                        $(document).ready(function(){
+                            var f=new Date();
+                            var mon = f.getMonth() + 1; 
+                            if(mon < 10){
+                                mon = '0' + mon;
+                            } 
+                            $('#countdown_2').countDown({
+                                targetDate: {
+                                    'day': f.getDate(),
+                                    'month':  mon,
+                                    'year': f.getFullYear(),
+                                    'hour': 16,
+                                    'min': 30,
+                                    'sec': 0o0
+                                }
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="contenedorConta" style="width: 1178px;">
+                <link rel="stylesheet" type="text/css" href="ruta/a/tu/jquery.fancybox.css?v=2.1.5" media="screen"> <!-- Cambia a tu CSS -->
+                <link rel="stylesheet" type="text/css" href="ruta/a/tu/jquery-ui-1.9.2.css" media="screen"> <!-- Cambia a tu CSS -->
+                <link rel="stylesheet" type="text/css" href="ruta/a/tu/jquery.dataTables.css" media="screen"> <!-- Cambia a tu CSS -->
+                <style rel="stylesheet" type="text/css">
+                    .trEncabezado {
+                        background: #0072C6;
+                        background: -webkit-gradient(linear, left top, left bottom, from(#0072C6), to(#0072C6));
+                        background: -moz-linear-gradient(top,  #0072C6,  #0072C6);
+                        color: #fff;
+                    }
+                    .tdEncabezado {
+                        border: 1px solid #e0e0e0;
+                        font-weight: bold;
+                    }
+                    .tdLista {
+                        border-bottom: 1px solid #e0e0e0;
+                        padding: 3px !important;
+                    }
+                    table.dataTable thead th, table.dataTable thead td {
+                        padding: 0x;
+                    }
+                    .rowSeleccion {
+                        background: #FCF8E3 !important;
+                    }
+                    .tdBottom {
+                        border-bottom: 3px double #000 !important;
+                    }
+                    table.dataTable tbody tr {
+                        background: #F5F5F6;
+                    }
+                    .colorInmovilizarDatos {
+                        background: #F5F5F6;
+                    }
+                    .colorSeleccionInmovilizarDatos {
+                        background: #FCF8E3 !important;
+                    }
+                    .inmovilizarDatos {
+                        position: sticky;
+                        left: 0px;
+                        z-index: 10;
+                    }
+                    .inmovilizarDatosTipIde {
+                        position: sticky;
+                        left: 26px;
+                        z-index: 10;
+                    }
+                    .ui-datepicker {
+                        z-index: 99 !important;
+                    }
+                </style>
+                <div class="titulo2">planilla N (Correcciones)</div>
+                <form id="form1" name="form1" method="POST" action="" autocomplete="off">
+                    <input type="hidden" id="tokenForm" name="tokenForm" value="tu_token"> <!-- Cambia a tu token -->
+                    <input type="hidden" id="plaOpeId" name="plaOpeId" value="">
+                    <input type="hidden" id="valorAnterior" value="">
+                    <input type="hidden" id="procesoPlanilla1271" value="0">
+                    <input type="hidden" id="tipoPlanilla" name="tipoPlanilla" value="">
+                    <input type="hidden" id="tipoPresentacion" name="tipoPresentacion" value="">
+                    <input type="hidden" id="tipoAportante" name="tipoAportante" value="">
+                    <input type="hidden" id="plaOpcionPago" name="plaOpcionPago" value="0">
+                    <table align="center" width="100%" cellspacing="0" border="0">
+                        <tbody>
+                            <tr>
+                                <td colspan="5" style="background:#0072C6 repeat-x; color: #fff"><b>Información de la planilla N: Corrige errores y ajusta el pago de periodos anteriores o reporta novedades de retiro sin valor.</b></td>
+                            </tr>
+                            <tr>
+                                <td>Número de planilla base: <i id="mensajeNumeroPlanilla" class="icon-question-sign" data-original-title="" title=""></i></td>
+                                <td>Fecha de pago Planilla: <i id="mensajeFechaPlanilla" class="icon-question-sign" data-original-title="" title=""></i></td>
+                                <td>Periodo Cotización: <i id="mensajePeriodoCotizacion" class="icon-question-sign" data-original-title="" title=""></i></td>
+                                <td>Periodo Servicio: <i id="mensajePeriodoServicio" class="icon-question-sign" data-original-title="" title=""></i></td>
+                                <td>Nombre Sucursal:</td>
+                            </tr>
+                            <tr>
+                                <td width="20%"><input type="text" id="numeroPlanillaBase" name="numeroPlanillaBase" value="" onkeypress="return isNumberKey(event)" style="width: 96%"></td>
+                                <td width="15%"><input type="text" id="fechaPlanillaPago" name="fechaPlanillaPago" value="" style="width: 94%" readonly="" class="hasDatepicker"></td>
+                                <td width="13%"><input type="text" id="periodoCotizacion" name="periodoCotizacion" value="" style="width: 94%" readonly=""></td>
+                                <td width="13%"><input type="text" id="periodoServicio" name="periodoServicio" value="" style="width: 94%" readonly=""></td>
+                                <td width="40%">
+                                    <select id="nombreSucursal" name="nombreSucursal" style="width: 100%;">
+                                        <option value=""> -- Sin Sucursal / Cambio a Unico -- </option>
+                                        <option value="01-DIANA TORO">01-DIANA TORO</option>
+                                    </select>
+                                    <input type="hidden" id="sucursalCodigo" name="sucursalCodigo" value="">
+                                    <input type="hidden" id="sucursalNombre" name="sucursalNombre" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" align="right"><input type="submit" class="btn btn-primary" value="Buscar" name="buscar" id="buscar" disabled=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                <script type="text/javascript" src="ruta/a/tu/autoNumeric-1.9.22.js"> </script> <!-- Cambia a tu JS -->
+                <script type="text/javascript" src="ruta/a/tu/jquery.fancybox.js?v=2.1.5"></script> <!-- Cambia a tu JS -->
+                <script type="text/javascript" src="ruta/a/tu/jquery-ui.min-1.9.2.js"></script> <!-- Cambia a tu JS -->
+                <script type="text/javascript" src="ruta/a/tu/jquery.dataTables.js"></script> <!-- Cambia a tu JS -->
+                <script type="text/javascript" src="ruta/a/tu/planillacorrecion.js?20240820"></script> <!-- Cambia a tu JS -->
+            </div>
+        </contenido>
+        <footer>
+        </footer>
+    </div>
+    <!-- Google tag (gtag.js) -->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2NZE272KFW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-2NZE272KFW');
+    </script>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+</body>
+</html>
