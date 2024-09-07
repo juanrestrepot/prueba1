@@ -1,0 +1,201 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="Public">
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+    <link rel="shortcut icon" href="http://pila.tidelta.com/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="http://pila.tidelta.com/favicon.ico" type="image/x-icon">
+    <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/pila/views/layout/default/css/unico.css?20221007">
+    <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/pila/views/layout/default/css/pager.css">
+    <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/css/bootstrap.css">
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap-dropdown.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.lwtCountdown-1.0.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/allTidelta.js?20231129"></script>
+    <style>.cke{visibility:hidden;}</style>
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style>
+    <script type="text/javascript" src="http://pila.tidelta.com/publicApps/editor/config.js?t=E5OD"></script>
+    <link rel="stylesheet" type="text/css" href="http://pila.tidelta.com/publicApps/editor/skins/moono/editor.css?t=E5OD">
+    <script type="text/javascript" src="http://pila.tidelta.com/publicApps/editor/lang/es.js?t=E5OD"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/publicApps/editor/styles.js?t=E5OD"></script>
+    <style id="cke_ui_color" type="text/css"></style>
+</head>
+<body>
+    <div id="loadingImgBar" style="display:none">
+        <div id="ventana" class="contenedorLoading">
+            <img src="http://pila.tidelta.com/pila/public/img/fancybox/fancybox_loading@2x.gif"><br>
+            <b>Cargando...</b>
+        </div>
+    </div>
+    <div class="contenedor">
+        <header>
+        </header>
+        <script>
+            $(document).ready(function() {
+                var timeControl = $("#controlTime").height();
+                var menuControl = $("#menOperaciones").height();
+                var conPagina = $(".contenedorConta").height();
+                heightInfo = (conPagina - (timeControl + menuControl + 31));
+                $(".leyoutChat").css("height", heightInfo + "px");
+            });
+        </script>
+        <contenido>
+            <script>
+                $(document).ready(function(){
+                    var f = new Date();
+                    var mon = f.getMonth() + 1; 
+                    if (mon < 10) {
+                        mon = '0' + mon;
+                    } 
+                    $('#countdown_2').countDown({
+                        targetDate: {
+                            'day': f.getDate(),
+                            'month': mon,
+                            'year': f.getFullYear(),
+                            'hour': 16,
+                            'min': 30,
+                            'sec': 0o0
+                        }
+                    });
+                });
+            </script>
+        </div>
+        <div class="contenedorConta">
+            <link rel="stylesheet" type="text/css" href="http://pila.tidelta.com/pila/public/css/jquery-ui-1.9.2.css" media="screen">
+            <link rel="stylesheet" type="text/css" href="http://pila.tidelta.com/pila/public/css/jquery.fancybox.css?v=2.1.5" media="screen">
+            <style type="text/css">
+                input, textarea, .uneditable-input {
+                    width: 75%;
+                }
+            </style>
+            <div class="titulo2">Nuevo incapacidad</div>
+            <form id="form1" method="POST" action="" enctype="multipart/form-data" autocomplete="off">
+                <input type="hidden" id="tokenForm" name="tokenForm" value="ceae894eb1875d6f98db0d1a0118c89a413c095f">
+                <input type="hidden" id="idEmpresa" name="idEmpresa" value="0">
+                <input type="hidden" id="razonSocialEmpresa" name="razonSocialEmpresa" value="0">
+                <input type="hidden" id="incEstAplId" name="incEstAplId" value="1">
+                <table align="center" border="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" style="background:#0072C6 repeat-x; color: #fff;">Datos Asociado - Empresa: <span id="nombreEmpresa">Sin seleccion</span></td>
+                        </tr>
+                        <tr>
+                            <td><b>Asociado:</b></td>
+                            <td colspan="3">
+                                <input type="text" id="nombreAsociado" name="nombreAsociado" value="" style="width: 99%" autocomplete="off" required="" onblur="datosAsociado()" saltocampoejecutar="incNroRadicado" class="ui-autocomplete-input">
+                                <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                <input type="hidden" id="asoId" name="asoId" value="" required="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="11%"><b>Telefono:</b></td>
+                            <td width="39%"><input type="text" id="asoTelefono" name="asoTelefono" value="" style="width: 98%" readonly=""></td>
+                            <td width="9%"><b>Celular:</b></td>
+                            <td width="41%"><input type="text" id="asoCelular" name="asoCelular" value="" style="width: 98%" readonly=""></td>
+                        </tr>
+                        <tr>
+                            <td><b>Dirección:</b></td>
+                            <td><input type="text" id="asoDireccion" name="asoDireccion" value="" style="width: 98%" readonly=""></td>
+                            <td><b>Ciudad:</b></td>
+                            <td><input type="text" id="asoCiudad" name="asoCiudad" value="" style="width: 98%" readonly=""></td>
+                        </tr>
+                        <tr>
+                            <td><b>Email:</b></td>
+                            <td><input type="text" id="asoEmail" name="asoEmail" value="" style="width: 98%" readonly=""></td>
+                            <td><b>F. Afiliación:</b></td>
+                            <td><input type="text" id="incAdmFIngreso" name="incAdmFIngreso" value="" style="width: 98%" readonly=""></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table align="center" border="0" width="100%">
+                    <tbody>
+                        <tr>
+                            <td colspan="4" style="background:#0072C6 repeat-x; color: #fff;">Detalle de la Incapacidad:</td>
+                        </tr>
+                        <tr>
+                            <td><b>Aplicar a:</b></td>
+                            <td>
+                                <div id="administradorasAsociado">
+                                    <select id="incAdmId" name="incAdmId" style="width: 100%" required="">
+                                        <option> -- Seleccionar Opción -- </option>
+                                        <option value="5|ARL|0.00522">ARL SURA</option>
+                                        <option value="86|EPS|0.04">EPS SURA</option>
+                                    </select>
+                                </div>
+                                <input type="hidden" id="incAdmTarifa" name="incAdmTarifa" value="" readonly="">
+                            </td>
+                            <td><b>Tipo:</b></td>
+                            <td>
+                                <div id="tipoIncapacidad">
+                                    <select id="incTipIncId" name="incTipIncId" style="width: 100%" required="">
+                                        <option> -- Seleccionar Opción -- </option>
+                                        <option value="3">Laboral</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="11%"><b>Nro. Radicado:</b></td>
+                            <td width="39%"><input type="text" id="incNroRadicado" name="incNroRadicado" value="" style="width: 98%"></td>
+                            <td width="9%"><b>Fechas:</b></td>
+                            <td width="41%">
+                                <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td width="10%">Inicio</td>
+                                            <td width="27%"><input type="text" id="incFechaInicio" name="incFechaInicio" value="" style="width: 91%" placeholder="YYYY-MM-DD" required="" class="hasDatepicker"></td>
+                                            <td width="10%">Final</td>
+                                            <td width="27%"><input type="text" id="incFechaFinal" name="incFechaFinal" value="" style="width: 91%" placeholder="YYYY-MM-DD" required="" class="hasDatepicker"></td>
+                                            <td width="10%">Días</td>
+                                            <td width="16%"><input type="text" id="incDias" name="incDias" value="" style="width: 87%" readonly="" required=""></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><b>Archivo *.ZIP:</b> </td>
+                            <td id="mensajeIdPapeles" data-original-title="" title="">
+                                <input type="file" class="test" id="incPapeles" name="incPapeles" tabindex="-1" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);">
+                                <div class="bootstrap-filestyle input-group">
+                                    <input type="text" class="form-control " disabled="">
+                                    <span class="group-span-filestyle input-group-btn" tabindex="0">
+                                        <label for="incPapeles" class="btn btn-primary ">
+                                            <span class="glyphicon glyphicon-folder-open"></span> Examinar
+                                        </label>
+                                    </span>
+                                </div>
+                            </td>
+                            <td colspan="2" align="right">
+                                <input type="submit" class="btn btn-success" value="Guardar" name="guardar">
+                                <input type="submit" class="btn btn-primary" value="Guadar y Salir" name="guardarsalir">
+                                <input type="button" class="btn btn-danger" value="Cancelar" name="cancelar" onclick="location = 'http://pila.tidelta.com/pila/incapacidades'">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+            <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery-ui.min-1.9.2.js"></script>
+            <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.fancybox.js?v=2.1.5"></script>
+            <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap-filestyle.js"></script>
+            <script type="text/javascript" src="http://pila.tidelta.com/publicApps/editor/ckeditor.js"></script>
+            <script type="text/javascript" src="http://pila.tidelta.com/pila/views/incapacidades/js/incapacidadesForm.js"></script>
+        </div>
+        </contenido>
+        <footer>
+        </footer>
+    </div>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-2NZE272KFW');
+    </script>
+    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="z-index: 1; display: none;"></ul>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div>
+</body>
+</html>

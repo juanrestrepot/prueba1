@@ -1,0 +1,509 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="Public">
+    
+        <title>PILA - Tecnologia Informatica DELTA.</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+        
+        <link rel="shortcut icon" href="http://pila.tidelta.com/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="http://pila.tidelta.com/favicon.ico" type="image/x-icon">
+        
+        <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/pila/views/layout/default/css/unico.css?20221007">
+        <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/pila/views/layout/default/css/pager.css">
+                <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/css/bootstrap.css">
+            
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap-dropdown.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.lwtCountdown-1.0.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/allTidelta.js?20231129"></script>
+        
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+    <body>
+        <div id="loadingImgBar" style="display:none">
+            <div id="ventana" class="contenedorLoading"><img src="http://pila.tidelta.com/pila/public/img/fancybox/fancybox_loading@2x.gif"><br><b>Cargando...</b></div>
+        </div>
+        <div class="contenedor">
+            <header>
+        
+            </header>
+                <script>
+                $(document).ready(function() {
+                    var timeControl = $("#controlTime").height();
+                    var menuControl = $("#menOperaciones").height();
+                    var conPagina = $(".contenedorConta").height();
+                    heightInfo = (conPagina - (timeControl + menuControl + 31));
+                    $(".leyoutChat").css("height", heightInfo + "px");
+                });	
+                </script>
+            <contenido>
+                            <script>
+                                $(document).ready(function(){
+                                    var f=new Date();
+                                    var mon = f.getMonth() + 1; 
+                                    if(mon < 10){
+                                        mon = '0' + mon;
+                                    } 
+                                    $('#countdown_2').countDown({
+                                        targetDate: {
+                                            'day': f.getDate(),
+                                            'month':  mon,
+                                            'year': f.getFullYear(),
+                                            'hour': 16,
+                                            'min': 30,
+                                            'sec': 0o0}
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                            <div class="contenedorConta">
+                                    
+    <link rel="stylesheet" type="text/css" href="http://pila.tidelta.com/pila/public/css/jquery-ui-1.9.2.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://pila.tidelta.com/pila/public/css/jquery.fancybox.css?v=2.1.5" media="screen">
+    
+    <div class="titulo2"><span class="tipoDocumento">recaudo afiliación empresa servicio</span></div>
+    
+    <form id="form1" method="POST" action="" autocomplete="off">
+        <input type="hidden" id="tokenForm" name="tokenForm" value="ceae894eb1875d6f98db0d1a0118c89a413c095f">
+        <input type="hidden" id="porcentajeIVA" value="0">
+        <input type="hidden" id="empCuentas" value="8~2700004633;03008310809;27000004624;59700004814;70802006410;70803131357;70803132039;85100005674;86944444850|4~100031110;100032110;200905158;27000004622|34~2700004633;03008310809;27000004624;70802006410;70803131357;70803132039;86944444850">
+        <table align="center" border="0" width="100%">
+            <tbody><tr>
+                <td colspan="7" style="background:#0072C6 repeat-x; color: #fff;">Datos recaudo:</td>
+            </tr>
+            <tr>
+                <td>Identificación:</td>
+            <td>
+                            <select name="proafiserIdeId" id="proafiserIdeId" style="width: 100%" required="" onchange="servicioEmpresaValidar()">
+                        <option value=""> -- </option>
+                                                <option value="2">CC</option>
+                                                <option value="7">CD</option>
+                                                <option value="3">CE</option>
+                                                <option value="1">NI</option>
+                                                <option value="6">PA</option>
+                                                <option value="9">PE</option>
+                                                <option value="10">PT</option>
+                                                <option value="5">RC</option>
+                                                <option value="8">SC</option>
+                                                <option value="4">TI</option>
+                                        </select>
+            </td>
+                <td>
+            <input type="text" id="proafiserIdentificacion" name="proafiserIdentificacion" maxlength="16" value="" style="width: 96%" onkeypress="return isNumberKey(event)" required="" onblur="servicioEmpresaValidar()">
+                </td>
+                <td>Razon Social:</td>
+                <td colspan="3"><input type="text" id="proafiserRazonSocial" name="proafiserRazonSocial" maxlength="60" value="" style="width: 98.5%" onkeypress="return isUperCaseKey(event)" required=""></td>
+            </tr>
+            <tr>
+                <td width="10%">Dirección:</td>
+                <td width="25%" colspan="2"><input type="text" id="proafiserDireccion" name="proafiserDireccion" maxlength="45" value="" style="width: 97%" required=""></td>
+                <td width="10%">Ciudad:</td>
+                <td width="24%">
+                    <input type="text" id="ciudad" name="ciudad" value="" style="width: 97.5%" onkeypress="return isUperCaseKey(event)" required="" class="ui-autocomplete-input" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <input type="hidden" id="proafiserMunId" name="proafiserMunId" value="" required="">
+                </td>
+            <td width="7%">Telefono:</td>
+                <td width="24%">
+                    <input type="text" id="proafiserTelefono" name="proafiserTelefono" maxlength="45" value="" style="width: 97%" required="">
+                </td>
+            </tr>
+        <tr>
+            <td colspan="7" style="background:#0072C6 repeat-x; color: #fff;">Datos asociados</td>
+        </tr>
+        </tbody></table>
+        <div style="height: 328px; max-height: 328px; overflow: auto;">
+        <table align="center" border="0" width="100%" style="border-spacing: 0px; border-collapse: separate; margin: 0px; padding: 0px">
+            <tbody><tr>
+            <td width="22%">
+                <select id="tipoIdentificacionAsociado" style="width: 31%" onchange="asociadoValidar()">
+                <option value=""> -- </option>
+                                <option value="2">CC</option>
+                                <option value="7">CD</option>
+                                <option value="3">CE</option>
+                                <option value="1">NI</option>
+                                <option value="6">PA</option>
+                                <option value="9">PE</option>
+                                <option value="10">PT</option>
+                                <option value="5">RC</option>
+                                <option value="8">SC</option>
+                                <option value="4">TI</option>
+                            </select>
+                <input type="text" id="numeroIdentificacionAsociado" placeholder="No Identificacion" value="" style="width: 63%" onkeypress="return isNumberKey(event)" onblur="asociadoValidar()">
+            </td>
+            <td width="19%"><input type="text" id="primerApellidoAsociado" placeholder="Primer Apellido" value="" style="width: 96%" onkeypress="return isUperCaseKey(event)"></td>
+            <td width="19%"><input type="text" id="segundoApellidoAsociado" placeholder="Segundo Apellido" value="" style="width: 96%" onkeypress="return isUperCaseKey(event)"></td>
+            <td width="19%"><input type="text" id="primerNombreAsociado" placeholder="Primer Nombre" value="" style="width: 96%" onkeypress="return isUperCaseKey(event)"></td>
+            <td width="19%"><input type="text" id="segundoNombreAsociado" placeholder="Segundo Nombre" value="" style="width: 96%" onkeypress="return isUperCaseKey(event)"></td>
+            <td width="2%" rowspan="3">
+                <a href="javascript:void(0)" onclick="cargarDatosAsociado();" class="btn btn-success" style="height: 79px; width: 1px">
+                <i class="icon-plus-sign icon-white" style="margin: 33px 0px 0px -5px;"></i>
+                </a>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="2">
+                <select id="admAFP" style="width: 100%">
+                <option value=""> -- Seleccione AFP -- </option>
+                                                <option value="21">CAXDAC</option>
+                                                                <option value="19">COLFONDOS</option>
+                                                                <option value="20">COLPENSIONES</option>
+                                                                <option value="22">FONPRECON</option>
+                                                                <option value="17">OLD MUTUAL SKANDIA</option>
+                                                                <option value="18">OLD MUTUAL SKANDIA ALTERNATIVO</option>
+                                                                <option value="24">PENSIONES DE ANTIOQUIA</option>
+                                                                <option value="14">PORVENIR</option>
+                                                                <option value="13">PROTECCION</option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </select>
+            </td>
+            <td colspan="2">
+                <select id="admEPS" style="width: 100%">
+                <option value=""> -- Seleccione EPS -- </option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <option value="104">ADRES (MIN001) ANTES FOSYGA</option>
+                                                                <option value="147">ADRES (MIN002) ANTES FOSYGA</option>
+                                                                <option value="148">ADRES (MIN003) ANTES FOSYGA</option>
+                                                                <option value="171">ADRES (MIN004) ANTES FOSYGA</option>
+                                                                <option value="79">ALIANSALUD E.P.S.</option>
+                                                                <option value="141">ANAS WAYUU E P S I FOSYGA</option>
+                                                                <option value="128">ASMET SALUD</option>
+                                                                <option value="121">ASOC DE CABILDO DE RESGUARDO INDIG ZENU</option>
+                                                                <option value="135">ASOCIACION INDIGENA DEL CAUCA </option>
+                                                                <option value="124">ASOCIACION MUTUAL SER</option>
+                                                                <option value="136">CAFESALUD ENTIDAD PROMOTORA DE SALUD S.A</option>
+                                                                <option value="119">CAPRESOCA EPS</option>
+                                                                <option value="114">COMFAMILIAR DE NARIÑO EPS   </option>
+                                                                <option value="87">COMFENALCO VALLE EPS</option>
+                                                                <option value="84">COMPENSAR EPS</option>
+                                                                <option value="140">DUSAKAWI EPS</option>
+                                                                <option value="130">ECOOPSOS</option>
+                                                                <option value="139">EMP MUTUAL PARA EL DESAR ENDISALUD ESS</option>
+                                                                <option value="102">EMPRESAS PÚBLICAS DE MEDELLÍN DEPARTAMENTO MÉDICO</option>
+                                                                <option value="125">EMSSANAR EPS</option>
+                                                                <option value="122">EPS MALLAMAS</option>
+                                                                <option value="123">EPS PIJAOSALUD</option>
+                                                                <option value="161">EPS SALUD BOLIVAR</option>
+                                                                <option value="82">EPS SANITAS</option>
+                                                                <option value="86">EPS SURA</option>
+                                                                <option value="143">EPS-CCFC COM GUAJIRA</option>
+                                                                <option value="118">EPS-S  CONVIDA</option>
+                                                                <option value="129">EPS-S AMBUQ</option>
+                                                                <option value="116">EPS-S CAJACOPI</option>
+                                                                <option value="113">EPS-S COMF HUILA</option>
+                                                                <option value="115">EPS-S COMFACUNDI</option>
+                                                                <option value="150">EPS-S COMFAORIENTE</option>
+                                                                <option value="127">EPS-S COMPARTA</option>
+                                                                <option value="138">EPS-S COMPEN CHOCO</option>
+                                                                <option value="126">EPS-S COOSALUD</option>
+                                                                <option value="156">EPS-S MUTUAL SER</option>
+                                                                <option value="142">FAMILIAR DE COLOMBIA</option>
+                                                                <option value="92">FAMISANAR EPS</option>
+                                                                <option value="108">FONDO DE PASIVO SOCIAL</option>
+                                                                <option value="152">MUTUALSER</option>
+                                                                <option value="146">NUEVA EMPRESA PROMOTORA DE SAL</option>
+                                                                <option value="99">NUEVA EPS</option>
+                                                                <option value="120">RECAUDO SGP CAPITAL SALUD</option>
+                                                                <option value="93">S.O.S EPS</option>
+                                                                <option value="155">SALUD MIA EPS</option>
+                                                                <option value="80">SALUD TOTAL EPS</option>
+                                                                <option value="109">SAVIA SALUD EPS</option>
+                                                                <option value="149">SSS COOSALUD SGP</option>
+                                                                <option value="165">UNIVERSIDAD CAUCA</option>
+                                                                <option value="162">UNIVERSIDAD DE CARTAGENA</option>
+                                                                <option value="166">UNIVERSIDAD DE CORDOBA</option>
+                                                                <option value="167">UNIVERSIDAD DE SANTANDER</option>
+                                                                <option value="168">UNIVERSIDAD DEL ATLANTICO</option>
+                                                                <option value="169">UNIVERSIDAD DEL VALLE</option>
+                                                                <option value="163">UNIVERSIDAD NACIONAL</option>
+                                                                <option value="164">UNIVERSIDAD NARIÑO</option>
+                                                                <option value="170">UNIVERSIDAD UPTC</option>
+                                                                <option value="158">XEPS - EN PROCESO DE TRASLADO</option>
+                                                                                                                                                                                        </select>
+            </td>
+            <td>
+                <select id="nivelArl" style="width: 100%">
+                <option value=""> -- Seleccione ARL -- </option>
+                <option value="0.00522000"> Nivel 1: 0.5220% </option>
+                <option value="0.01044000"> Nivel 2: 1.0440% </option>
+                <option value="0.02436000"> Nivel 3: 2.4360% </option>
+                <option value="0.04350000"> Nivel 4: 4.35% </option>
+                <option value="0.06960000"> Nivel 5: 6.960% </option>
+                </select>
+            </td>
+            </tr>
+            <tr>
+            <td colspan="2">
+                <select id="admCCF" style="width: 100%">
+                <option value=""> -- Seleccione CCF -- </option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <option value="39">CAFABA</option>
+                                                                <option value="28">CAFAM</option>
+                                                                <option value="59">CAFAMAZ</option>
+                                                                <option value="70">CAFASUR</option>
+                                                                <option value="29">CAJACOPI ATLANTICO</option>
+                                                                <option value="66">CAJAMAG</option>
+                                                                <option value="56">CAJASAI</option>
+                                                                <option value="74">CAJASAN</option>
+                                                                <option value="73">COFREM</option>
+                                                                <option value="26">COLSUBSIDIO</option>
+                                                                <option value="40">COMBARRANQUILLA</option>
+                                                                <option value="31">COMCAJA</option>
+                                                                <option value="53">COMFA GUAJIRA</option>
+                                                                <option value="41">COMFABOY</option>
+                                                                <option value="60">COMFACA</option>
+                                                                <option value="61">COMFACASANARE</option>
+                                                                <option value="62">COMFACAUCA</option>
+                                                                <option value="63">COMFACESAR</option>
+                                                                <option value="64">COMFACHOCO</option>
+                                                                <option value="45">COMFACOR</option>
+                                                                <option value="46">COMFACUNDI</option>
+                                                                <option value="37">COMFAMA</option>
+                                                                <option value="30">COMFAMILIAR CAMACOL</option>
+                                                                <option value="44">COMFAMILIAR CARTAGENA</option>
+                                                                <option value="32">COMFAMILIAR DEL ATLANTICO</option>
+                                                                <option value="65">COMFAMILIAR HUILA</option>
+                                                                <option value="54">COMFAMILIAR NARIÑO</option>
+                                                                <option value="69">COMFAMILIAR PUTUMAYO</option>
+                                                                <option value="55">COMFAMILIAR RISARALDA</option>
+                                                                <option value="43">COMFAMILIARES DE CALDAS</option>
+                                                                <option value="72">COMFANDI</option>
+                                                                <option value="67">COMFANORTE</option>
+                                                                <option value="68">COMFAORIENTE</option>
+                                                                <option value="57">COMFASUCRE</option>
+                                                                <option value="71">COMFATOLIMA</option>
+                                                                <option value="33">COMFENALCO ANTIOQUIA</option>
+                                                                <option value="47">COMFENALCO CARTAGENA</option>
+                                                                <option value="49">COMFENALCO QUINDIO</option>
+                                                                <option value="35">COMFENALCO SANTANDER</option>
+                                                                <option value="50">COMFENALCO TOLIMA</option>
+                                                                <option value="34">COMFENALCO VALLE</option>
+                                                                <option value="38">COMFIAR</option>
+                                                                <option value="153">COMGIRARDOT</option>
+                                                                <option value="36">COMPENSAR</option>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </select>
+            </td>
+            <td align="right">
+                SubTotal $: <input type="text" id="vlrSubtotal" class="auto" value="" style="width: 54%; text-align:right">
+            </td>
+            <td align="right">
+                IVA $: <input type="text" id="vlrIVA" class="auto" value="0" style="width: 73%; text-align:right" readonly="">
+            </td>
+            <td align="right">
+                Total $: <input type="text" id="vlrTotal" value="0" style="width: 68%; text-align:right" readonly="">
+            </td>
+            </tr>
+        </tbody></table>
+        <input type="hidden" id="solicitud_detalle" name="solicitud_detalle" value="">
+        <div align="center" id="detalleDiv"><div id="alert-error-jquery" class="alert alert-error" style="position: absolute; z-index: 10000; width: 20%; text-align: center; top: 35%; left: 0px; right: 0px; margin: auto; display: none;"><span id="text-error-jquery"><b>Debe de ingresar el numero de Identificacion</b></span></div><script>
+    
+                function cargarDatosAsociado(){
+                
+                if($("#tipoIdentificacionAsociado").val() == ""){
+                                $("#alert-error-jquery").show().fadeOut(5000);
+                                $("#text-error-jquery").html("<b>Debe de seleccionar el tipo de Identificacion.</b>");
+                                $("#tipoIdentificacionAsociado").focus();
+                                return false;
+                            }else if($("#numeroIdentificacionAsociado").val() == ""){
+                                $("#alert-error-jquery").show().fadeOut(5000);
+                                $("#text-error-jquery").html("<b>Debe de ingresar el numero de Identificacion</b>");
+                                $("#numeroIdentificacionAsociado").focus();
+                                return false;
+                            }else if($("#primerApellidoAsociado").val() == ""){
+                                $("#alert-error-jquery").show().fadeOut(5000);
+                                $("#text-error-jquery").html("<b>Debe de ingresar el primero Apellido.</b>");
+                                $("#primerApellidoAsociado").focus();
+                                return false;
+                            }else if($("#primerNombreAsociado").val() == ""){
+                                $("#alert-error-jquery").show().fadeOut(5000);
+                                $("#text-error-jquery").html("<b>Debe de ingresar el primer nombre.</b>");
+                                $("#primerNombreAsociado").focus();
+                                return false;
+                            }
+                
+                if($("#admAFP").val() == "" && $("#admEPS").val() == "" && $("#nivelArl").val() == "" && $("#admCCF").val() == ""){
+                    $("#alert-error-jquery").show().fadeOut(5000);
+                                $("#text-error-jquery").html("<b>Debe de seleccionar una administradora.</b>");
+                                return false;
+                }
+                
+                if($("#vlrTotal").val() == 0){
+                    $("#alert-error-jquery").show().fadeOut(5000);
+                                $("#text-error-jquery").html("<b>Debe de ingresar un valor.</b>");
+                    $("#vlrTotal").focus();
+                                return false;
+                }
+                
+                var validarIdentificacion = 0;
+                
+                if($("#solicitud_detalle").val() != ""){
+                    $(".tableDetalle input[type=text]").each(function(){
+                    if(this.id != undefined){
+                        var idText = this.id;
+                        var campoText = idText.split("_");
+                        if($("#tipoIde_" + campoText[1]).val() == $("#tipoIdentificacionAsociado :selected").text() && $("#numeroIde_" + campoText[1]).val() == $("#numeroIdentificacionAsociado").val()){
+                        validarIdentificacion = 1;
+                        return false;
+                        }
+                    }
+                    });
+                }
+                
+                if(validarIdentificacion == 1){
+                    $("#alert-error-jquery").show().fadeOut(5000);
+                    $("#text-error-jquery").html("<b>Ya existe un asociado en el listado.</b>");
+                    $("#tipoIdentificacionAsociado").focus();
+                    return false;
+                }
+                
+                var vlrSubTotalEnvia = parseInt($("#vlrSubtotal").val().toString().replace(/\./g,""));
+                var vlrIVAEnvia = ($("#vlrIVA").length > 0) ? parseInt($("#vlrIVA").val().toString().replace(/\./g,"")) : 0;
+                var vlrTotalEnvia = parseInt($("#vlrTotal").val().toString().replace(/\./g,""));
+                
+                var nombreAdminAFP = ($("#admAFP").val() != "")	    ? $("#admAFP :selected").text()	: "-- Sin AFP --";
+                var nombreAdminEPS = ($("#admEPS").val() != "")	    ? $("#admEPS :selected").text()	: "-- Sin EPS --";
+                var nombreAdminARL = ($("#nivelArl").val() != "")   ? $("#nivelArl :selected").text()	: "-- Sin ARL --";
+                var nombreAdminCCF = ($("#admCCF").val() != "")	    ? $("#admCCF :selected").text()	: "-- Sin CCF --";
+                
+                $("#loadingImgBar").show();
+                
+                            agregarCampo($("#tipoIdentificacionAsociado").val() + '~' +
+                        $("#tipoIdentificacionAsociado :selected").text() + '~' +
+                        $("#numeroIdentificacionAsociado").val() + '~' +
+                        $("#primerApellidoAsociado").val().trim() + '~' +
+                        $("#segundoApellidoAsociado").val().trim() + '~' +
+                        $("#primerNombreAsociado").val().trim() + '~' +
+                        $("#segundoNombreAsociado").val().trim() + '~' +
+                        $("#admAFP").val() + '~' +
+                        nombreAdminAFP + '~' +
+                        $("#admEPS").val() + '~' +
+                        nombreAdminEPS + '~' +
+                        $("#nivelArl").val() + '~' +
+                        nombreAdminARL + '~' +
+                        $("#admCCF").val() + '~' +
+                        nombreAdminCCF + '~' +
+                        vlrSubTotalEnvia + '~' +
+                        vlrIVAEnvia + '~' +
+                        vlrTotalEnvia,
+                                        'solicitud_detalle', 'detalleDiv', 'cargarDetallesAsociado', '/views/facafiliacionempresa/detalleFacafiliacionempresa.php');
+                        
+                $("#loadingImgBar").hide();
+                $("#tipoIdentificacionAsociado option[value='']").prop("selected", true);
+                $("#numeroIdentificacionAsociado").val("");
+                $("#primerApellidoAsociado").val("");
+                $("#segundoApellidoAsociado").val("");
+                $("#primerNombreAsociado").val("");
+                $("#segundoNombreAsociado").val("");
+                $("#admAFP option[value='']").prop("selected", true);
+                $("#admEPS option[value='']").prop("selected", true);
+                $("#nivelArl option[value='']").prop("selected", true);
+                $("#admCCF option[value='']").prop("selected", true);
+                $("#vlrSubtotal").val("");
+                $("#vlrIVA").val(0);
+                $("#vlrTotal").val(0);
+                
+                        }
+                
+                validadTotalSolicitud();
+                
+                    </script></div>
+        </div>
+            <table align="center" border="0" width="100%" style="border-spacing: 1px; border-collapse: collapse;">
+            <tbody><tr>
+            <td width="74%" style="border-top: 1px #000 dashed"><input type="hidden" id="indModoRecaudo" name="indModoRecaudo" value="1"></td>
+            <td width="8%" align="right" style="border-top: 1px #000 dashed"><b>Valor total:</b></td>
+            <td width="18%" align="right" style="border-top: 1px #000 dashed; padding-top: 3px;">
+                <div class="input-prepend" style="width: 100%">
+                <span class="add-on">$</span>
+                <input type="text" id="VlrTotalSubtotal" name="VlrTotalSubtotal" value="0" class="auto" style="width: 79%; text-align: right" readonly="">
+                <input type="hidden" id="vlrTotalTotal" name="vlrTotalTotal" value="0">
+                </div>
+            </td>
+            </tr>
+        </tbody></table>
+            <table align="center" border="0" width="100%" style="border-spacing: 1px; border-collapse: collapse;">
+        <tbody><tr>
+            <td width="9%" align="left"><b>Pago en:</b></td>
+            <td width="40%" align="left">
+                    <select id="proafiserMedpagId" name="proafiserMedpagId" style="width: 100%" onchange="seleccionMetodoPago()" disabled="">
+                <option value="">Seleccione Opción</option>
+                                            <option value="1">Efectivo</option>
+                    
+                                            <option value="2">Cheque</option>
+                    
+                                            <optgroup label="Consignación">
+                                    <option value="3-1">BANCO AGRARIO</option>
+                                    <option value="3-2">BANCO AV VILLAS</option>
+                                    <option value="3-4">BANCO BBVA COLOMBIA S.A.</option>
+                                    <option value="3-6">BANCO CAJA SOCIAL</option>
+                                    <option value="3-31">BANCO COOPERATIVO COOPCENTRAL</option>
+                                    <option value="3-12">BANCO DAVIVIENDA</option>
+                                    <option value="3-5">BANCO DE BOGOTA</option>
+                                    <option value="3-18">BANCO DE OCCIDENTE</option>
+                                    <option value="3-13">BANCO FALABELLA</option>
+                                    <option value="3-15">BANCO GNB SUDAMERIS</option>
+                                    <option value="3-32">BANCO ITAU</option>
+                                    <option value="3-19">BANCO PICHINCHA S.A.</option>
+                                    <option value="3-20">BANCO POPULAR</option>
+                                    <option value="3-21">BANCO PROCREDITO</option>
+                                    <option value="3-33">BANCO SANTANDER COLOMBIA</option>
+                                    <option value="3-34">BANCO SERFINANZA</option>
+                                    <option value="3-8">BANCOLOMBIA</option>
+                                    <option value="3-30">BANCOOMEVA S.A.</option>
+                                    <option value="3-35">CFA COOPERATIVA FINANCIERA</option>
+                                    <option value="3-7">CITIBANK</option>
+                                    <option value="3-36">CONFIAR COOPERATIVA FINANCIERA</option>
+                                    <option value="3-38">CONSUERTE</option>
+                                    <option value="3-37">DAVIPLATA</option>
+                                    <option value="3-39">NEQUI</option>
+                                    <option value="3-29">SCOTIABANK COLPATRIA</option>
+                                    </optgroup>
+                    
+                                            <option value="5">PayU</option>
+                    
+                                            <option value="6">Baloto</option>
+                    
+                                            <option value="8">Gane</option>
+                    
+                                            <option value="9">Apostar</option>
+                    
+                                            <option value="11">PSE</option>
+                    
+                        </select>
+            </td>
+            <td width="33%">
+            <span class="tipoConsignacion" style="display: none">
+                <div class="input-prepend" style="width: 56%">
+                <span class="add-on">Nro:</span>
+                <input type="text" name="proafiserNroPago" id="proafiserNroPago" value="" style="width: 75%" autocomplete="off">
+                </div>
+                <div class="input-prepend" style="width: 40%">
+                <span class="add-on">Fecha:</span>
+                <input type="text" name="proafiserFechaPago" id="proafiserFechaPago" value="" style="width: 59%" readonly="" class="hasDatepicker">
+                </div>
+            </span>
+            </td>
+            <td width="18%" align="right">
+            <input type="submit" class="btn btn-success" value="Recaudo" id="generar" name="generar" disabled="" style="width: 49%">
+            <input type="button" class="btn btn-danger" value="Cancelar" name="cancelar" onclick="location = 'http://pila.tidelta.com/pila/facafiliacionempresa'" style="width: 48%">
+            </td>
+        </tr>
+        </tbody></table>
+    </form>
+    
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/autoNumeric-1.9.22.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery-ui.min-1.9.2.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/views/facindividual/js/facCuentasBancos.js?20230801"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/views/facafiliacionempresa/js/facafiliacionempresa.js?20230801"></script>            </div>
+            </contenido>
+            <footer>
+            </footer>
+        </div>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2NZE272KFW');
+        </script>
+    
+    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="z-index: 1; display: none;"></ul><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div></body></html>

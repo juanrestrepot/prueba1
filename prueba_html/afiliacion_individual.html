@@ -1,0 +1,329 @@
+<html xmlns="http://www.w3.org/1999/xhtml" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Cache-Control" content="Public">
+    
+        <title>PILA - Tecnologia Informatica DELTA.</title>
+        
+        <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+        
+        <link rel="shortcut icon" href="http://pila.tidelta.com/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="http://pila.tidelta.com/favicon.ico" type="image/x-icon">
+        
+        <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/pila/views/layout/default/css/unico.css?20221007">
+        <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/pila/views/layout/default/css/pager.css">
+                <link type="text/css" rel="stylesheet" href="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/css/bootstrap.css">
+            
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/publicApps/libs/bootstrap_2.3.2/js/bootstrap-dropdown.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.lwtCountdown-1.0.js"></script>
+        <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/allTidelta.js?20231129"></script>
+        
+    <style type="text/css">.fancybox-margin{margin-right:0px;}</style></head>
+    <body>
+        <div id="loadingImgBar" style="display: none;">
+            <div id="ventana" class="contenedorLoading"><img src="http://pila.tidelta.com/pila/public/img/fancybox/fancybox_loading@2x.gif"><br><b>Cargando...</b></div>
+        </div>
+        <div class="contenedor">
+            <header>
+            
+            </header>
+                <script>
+                $(document).ready(function() {
+                    var timeControl = $("#controlTime").height();
+                    var menuControl = $("#menOperaciones").height();
+                    var conPagina = $(".contenedorConta").height();
+                    heightInfo = (conPagina - (timeControl + menuControl + 31));
+                    $(".leyoutChat").css("height", heightInfo + "px");
+                });	
+                </script>
+            <contenido>
+                            <script>
+                                $(document).ready(function(){
+                                    var f=new Date();
+                                    var mon = f.getMonth() + 1; 
+                                    if(mon < 10){
+                                        mon = '0' + mon;
+                                    } 
+                                    $('#countdown_2').countDown({
+                                        targetDate: {
+                                            'day': f.getDate(),
+                                            'month':  mon,
+                                            'year': f.getFullYear(),
+                                            'hour': 16,
+                                            'min': 30,
+                                            'sec': 0o0}
+                                    });
+                                });
+                            </script>
+                        </div>
+                    </div>
+                            <div class="contenedorConta">
+                                    
+    <link rel="stylesheet" type="text/css" href="http://pila.tidelta.com/pila/public/css/jquery-ui-1.9.2.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="http://pila.tidelta.com/pila/public/css/jquery.fancybox.css?v=2.1.5" media="screen">
+    
+    <div class="titulo2">recaudo afiliación individual</div>
+    
+    <form id="form1" method="POST" action="" autocomplete="off">
+        <input type="hidden" id="tokenForm" name="tokenForm" value="ceae894eb1875d6f98db0d1a0118c89a413c095f">
+        <input type="hidden" name="copyFact" id="copyFact" value="C">
+        <input type="hidden" id="porcentajeIVA" value="0">
+        <input type="hidden" id="empCuentas" value="8~2700004633;03008310809;27000004624;59700004814;70802006410;70803131357;70803132039;85100005674;86944444850|4~100031110;100032110;200905158;27000004622|34~2700004633;03008310809;27000004624;70802006410;70803131357;70803132039;86944444850">
+        <table align="center" border="0" width="100%">
+            <tbody><tr>
+                <td colspan="4" style="background:#0072C6 repeat-x; color: #fff;">Datos recaudo:</td>
+            </tr>
+            <tr>
+                <td width="14%">Tipo Identificación:</td>
+                <td width="36%">
+                                    <select name="proafiIdeId" id="proafiIdeId" style="width: 100%" required="" onchange="asociadoValidar()">
+                        <option value=""> -- Seleccione opción -- </option>
+                                                <option value="2">Cédula de Ciudadanía</option>
+                                                <option value="7">Carné Diplomático</option>
+                                                <option value="3">Cédula de Extranjería</option>
+                                                <option value="1">Número Identificación Tributaria</option>
+                                                <option value="6">Pasaporte</option>
+                                                <option value="9">Permiso Especial de Permanencia</option>
+                                                <option value="10">Permiso por Protección Temporal</option>
+                                                <option value="5">Registro Civil</option>
+                                                <option value="8">Salvoconducto de Permanencia</option>
+                                                <option value="4">Tarjeta de Identidad</option>
+                                        </select>
+                </td>
+                <td width="14%">No. Identificación:</td>
+                <td width="36%"><input type="text" id="proafiIdentificacion" name="proafiIdentificacion" maxlength="15" value="" style="width: 97.5%" onkeypress="return isNumberKey(event)" required="" onblur="asociadoValidar()"></td>
+            </tr>
+            <tr>
+                <td>Primer Apellido:</td>
+                <td><input type="text" id="proafiApellido1" name="proafiApellido1" maxlength="50" value="" style="width: 97.5%" onkeypress="return isUperCaseKey(event)" required=""></td>
+                <td>Segundo Apellido:</td>
+                <td><input type="text" id="proafiApellido2" name="proafiApellido2" maxlength="30" value="" style="width: 97.5%" onkeypress="return isUperCaseKey(event)"></td>
+            </tr>
+            <tr>
+                <td>Primer Nombre:</td>
+                <td><input type="text" id="proafiNombre1" name="proafiNombre1" maxlength="50" value="" style="width: 97.5%" onkeypress="return isUperCaseKey(event)" required=""></td>
+                <td>Segundo Nombre:</td>
+                <td><input type="text" id="proafiNombre2" name="proafiNombre2" maxlength="30" value="" style="width: 97.5%" onkeypress="return isUperCaseKey(event)"></td>
+            </tr>
+            <tr>
+                <td>Dirección:</td>
+                <td>
+                    <input type="text" id="proafiDireccion" name="proafiDireccion" maxlength="150" value="" style="width: 97.5%" required="">
+                </td>
+                <td>Ciudad:</td>
+                <td>
+                    <input type="text" id="ciudad" name="ciudad" value="" style="width: 97.5%" onkeypress="return isUperCaseKey(event)" required="" class="ui-autocomplete-input" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <input type="hidden" id="proafiMunId" name="proafiMunId" value="" required="">
+                </td>
+            </tr>
+            <tr>
+                <td>Telefono/Celular:</td>
+                <td>
+                    <input type="text" id="proafiTelefono" name="proafiTelefono" maxlength="100" value="" style="width: 97.5%" required="">
+                </td>
+            </tr>
+            <tr>
+                <td>Asesor:</td>
+                <td>
+                    <input type="text" id="nomAsesor" name="nomAsesor" maxlength="50" value="" style="width: 97.5%" class="ui-autocomplete-input" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                    <input type="hidden" id="proafiAseId" name="proafiAseId" value="">
+                </td>
+                <td>Valor pagar asesor:</td>
+                <td>
+                    <div class="input-prepend" style="width: 100%">
+                        <span class="add-on">$</span>
+                        <input type="text" id="proafiVlrAsesor" name="proafiVlrAsesor" value="" class="auto" style="width: 89.5%">
+                    </div>
+                </td>
+            </tr>
+        </tbody></table>
+        <table align="center" border="0" width="100%" style="border-spacing: 2px; border-collapse: separate; margin: 0px; padding: 0px">
+            <tbody><tr style="background:#0072C6 repeat-x; color: #fff;">
+                <td align="center" style="width: 8%">Tipo</td>
+                <td align="center" style="width: 72%">Administradora / Concepto</td>
+                <td align="center" style="width: 18%">Tarifa</td>
+                <td align="center" style="padding: 0px; width: 2%"></td>
+            </tr>
+            <tr>
+                <td align="center">
+                    <select id="tipoDetalle" style="width: 100%">
+                        <option value=""></option>
+                        <option value="AFP">AFP</option>
+                        <option value="EPS">EPS</option>
+                        <option value="ARL">ARL</option>
+                        <option value="CCF">CCF</option>
+                        <option value="OTR">OTRO</option>
+                    </select>
+                </td>
+                <td align="center">
+                    <div id="admotrConcepto">
+                        <select style="width: 100%" id="conceptoDetalle"><option value=""> -- Seleccione opción -- </option><option value="104">ADRES  MIN001  antes FOSYGA</option><option value="147">ADRES  MIN002  antes FOSYGA</option><option value="148">ADRES  MIN003  antes FOSYGA</option><option value="171">ADRES  MIN004  antes FOSYGA</option><option value="79">ALIANSALUD E.P.S.</option><option value="141">ANAS WAYUU E P S I FOSYGA</option><option value="128">ASMET SALUD</option><option value="121">ASOC DE CABILDO DE RESGUARDO INDIG ZENU</option><option value="135">ASOCIACION INDIGENA DEL CAUCA </option><option value="124">ASOCIACION MUTUAL SER</option><option value="136">Cafesalud Entidad Promotora de Salud S.A</option><option value="119">CAPRESOCA EPS</option><option value="114">COMFAMILIAR DE NARIÑO EPS   </option><option value="87">COMFENALCO VALLE EPS</option><option value="84">COMPENSAR EPS</option><option value="140">DUSAKAWI EPS</option><option value="130">ECOOPSOS</option><option value="139">EMP MUTUAL PARA EL DESAR ENDISALUD ESS</option><option value="102">EMPRESAS PÚBLICAS DE MEDELLÍN DEPARTAMENTO MÉDICO</option><option value="125">EMSSANAR EPS</option><option value="122">EPS MALLAMAS</option><option value="123">EPS PIJAOSALUD</option><option value="161">EPS SALUD BOLIVAR</option><option value="82">EPS SANITAS</option><option value="86">EPS SURA</option><option value="143">EPS-CCFC COM GUAJIRA</option><option value="118">EPS-S  CONVIDA</option><option value="129">EPS-S AMBUQ</option><option value="116">EPS-S CAJACOPI</option><option value="113">EPS-S COMF HUILA</option><option value="115">EPS-S COMFACUNDI</option><option value="150">EPS-S COMFAORIENTE</option><option value="127">EPS-S COMPARTA</option><option value="138">EPS-S COMPEN CHOCO</option><option value="126">EPS-S COOSALUD</option><option value="156">EPS-S MUTUAL SER</option><option value="142">FAMILIAR DE COLOMBIA</option><option value="92">FAMISANAR EPS</option><option value="108">FONDO DE PASIVO SOCIAL</option><option value="152">MUTUALSER</option><option value="146">NUEVA EMPRESA PROMOTORA DE SAL</option><option value="99">NUEVA EPS</option><option value="120">RECAUDO SGP CAPITAL SALUD</option><option value="93">S.O.S EPS</option><option value="155">SALUD MIA EPS</option><option value="80">SALUD TOTAL EPS</option><option value="109">SAVIA SALUD EPS</option><option value="149">SSS COOSALUD SGP</option><option value="165">UNIVERSIDAD CAUCA</option><option value="162">UNIVERSIDAD DE CARTAGENA</option><option value="166">UNIVERSIDAD DE CORDOBA</option><option value="167">UNIVERSIDAD DE SANTANDER</option><option value="168">UNIVERSIDAD DEL ATLANTICO</option><option value="169">UNIVERSIDAD DEL VALLE</option><option value="163">UNIVERSIDAD NACIONAL</option><option value="164">UNIVERSIDAD NARIÑO</option><option value="170">UNIVERSIDAD UPTC</option><option value="158">XEPS - EN PROCESO DE TRASLADO</option></select>
+                    </div>
+                </td>
+                <td align="center">
+                    <div id="tarifaConcepto">
+                        <select style="width: 100%" id="tarifaDetalle"><option value="0.04">4%</option><option value="0.125">12.5%</option></select>
+                    </div>
+                </td>
+                <td align="center">
+                    <a href="javascript:void(0)" onclick="validarCampo();">
+                        <img alt="Agregar" title="Agregar" src="http://pila.tidelta.com/publicApps/img/ico/plus.png" border="0">
+                    </a>
+                </td>
+            </tr>
+        </tbody></table>
+        <div style="height: 150px; max-height: 150px; overflow: auto;">
+        <input type="hidden" id="solicitud_detalle" name="solicitud_detalle" value="">
+            <table align="center" border="0" width="100%">
+                <tbody><tr>
+                    <td align="left">
+                       <div align="center" id="detalleDiv">
+        <script type="text/javascript">
+            
+            function validarCampo(){
+                
+                if($("#tipoDetalle").val() == ""){
+                    alert("Debe de seleccionar un tipo.");
+                    $("#tipoDetalle").focus();
+                    return false;
+                }else if($("#conceptoDetalle").val() == ""){
+                    alert("Debe de seleccionar una administradora o concepto.");
+                    $("#conceptoDetalle").focus();
+                    return false;
+                }else if($("#tarifaDetalle").val() == "" && $("#tipoDetalle").val() != "OTR"){
+                    alert("Debe de seleccionar una tarifa.");
+                    $("#tarifaDetalle").focus();
+                    return false;
+                }
+                
+                var encontro = $("#solicitud_detalle").val().search($("#tipoDetalle :selected").text());
+                if(encontro > -1 && $("#tipoDetalle").val() != "OTR"){
+                    alert("El registro de tipo " + $("#tipoDetalle :selected").text() + " lo tiene en la lista, para agregar este debe eliminar el anterior.");
+                    $("#tarifaDetalle").focus();
+                    return false;
+                }
+                
+                $("#loadingImgBar").show();
+                var lineaRegistro = $("#tipoDetalle").val() + "~" + $("#tipoDetalle :selected").text() + "~" + $("#conceptoDetalle").val() + "~" + $("#conceptoDetalle :selected").text() + "~" + $("#tarifaDetalle").val() + "~" + $("#tarifaDetalle :selected").text();
+                agregarCampo(lineaRegistro, 'solicitud_detalle', 'detalleDiv', 'cargarSolicitudDetalle', '/views/facafiliacion/detalleSolicitud.php');
+    
+                $("#tipoDetalle option:eq(0)").prop("selected", true);
+                $("#admotrConcepto select").html("").fadeIn();
+                $("#tarifaConcepto select").html("").fadeIn();
+    
+            }
+        </script></div>             
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+            <input type="hidden" id="indModoRecaudo" name="indModoRecaudo" value="1">
+        <table align="center" border="0" width="100%" style="border-spacing: 1px; border-collapse: collapse;">
+            <tbody><tr>
+                <td width="7%" align="left" style="border-top: 1px #000 dashed"><b>Pago en:</b></td>
+                <td width="35%" align="left" style="border-top: 1px #000 dashed">
+                                    <select id="proafiMedpagId" name="proafiMedpagId" style="width: 100%" onchange="seleccionMetodoPago()" disabled="">
+                        <option value="">Seleccione Opción</option>
+                                                                        <option value="1">Efectivo</option>
+                                
+                                                                        <option value="2">Cheque</option>
+                                
+                                                                        <optgroup label="Consignación">
+                                                    <option value="3-1">BANCO AGRARIO</option>
+                                                    <option value="3-2">BANCO AV VILLAS</option>
+                                                    <option value="3-4">BANCO BBVA COLOMBIA S.A.</option>
+                                                    <option value="3-6">BANCO CAJA SOCIAL</option>
+                                                    <option value="3-31">BANCO COOPERATIVO COOPCENTRAL</option>
+                                                    <option value="3-12">BANCO DAVIVIENDA</option>
+                                                    <option value="3-5">BANCO DE BOGOTA</option>
+                                                    <option value="3-18">BANCO DE OCCIDENTE</option>
+                                                    <option value="3-13">BANCO FALABELLA</option>
+                                                    <option value="3-15">BANCO GNB SUDAMERIS</option>
+                                                    <option value="3-32">BANCO ITAU</option>
+                                                    <option value="3-19">BANCO PICHINCHA S.A.</option>
+                                                    <option value="3-20">BANCO POPULAR</option>
+                                                    <option value="3-21">BANCO PROCREDITO</option>
+                                                    <option value="3-33">BANCO SANTANDER COLOMBIA</option>
+                                                    <option value="3-34">BANCO SERFINANZA</option>
+                                                    <option value="3-8">BANCOLOMBIA</option>
+                                                    <option value="3-30">BANCOOMEVA S.A.</option>
+                                                    <option value="3-35">CFA COOPERATIVA FINANCIERA</option>
+                                                    <option value="3-7">CITIBANK</option>
+                                                    <option value="3-36">CONFIAR COOPERATIVA FINANCIERA</option>
+                                                    <option value="3-38">CONSUERTE</option>
+                                                    <option value="3-37">DAVIPLATA</option>
+                                                    <option value="3-39">NEQUI</option>
+                                                    <option value="3-29">SCOTIABANK COLPATRIA</option>
+                                                    </optgroup>
+                                
+                                                                        <option value="5">PayU</option>
+                                
+                                                                        <option value="6">Baloto</option>
+                                
+                                                                        <option value="8">Gane</option>
+                                
+                                                                        <option value="9">Apostar</option>
+                                
+                                                                        <option value="11">PSE</option>
+                                
+                                        </select>
+                </td>
+                <td width="33%" style="border-top: 1px #000 dashed">
+                    <span class="tipoConsignacion" style="display: none">
+                        <div class="input-prepend" style="width: 56%">
+                            <span class="add-on">Nro:</span>
+                            <input type="text" name="proafiNroPago" id="proafiNroPago" value="" style="width: 75%" autocomplete="off">
+                        </div>
+                        <div class="input-prepend" style="width: 40%">
+                            <span class="add-on">Fecha:</span>
+                            <input type="text" name="proafiFechaPago" id="proafiFechaPago" value="" style="width: 59%" readonly="" class="hasDatepicker">
+                        </div>
+                    </span>
+                </td>
+                <td width="8%" align="right" style="border-top: 1px #000 dashed"><b>Valor total:</b></td>
+                <td width="17%" align="left" style="border-top: 1px #000 dashed; padding-top: 3px;">
+                    <div class="input-prepend" style="width: 98%">
+                        <span class="add-on">$</span>
+                        <input type="text" id="proafiVlrSubtotal" name="proafiVlrSubtotal" value="0" class="auto" style="width: 79%; text-align: right" onkeyup="validadTotalSolicitud()">
+                    </div>
+                    <input type="hidden" id="proafiVlrTotal" name="proafiVlrTotal" value="0">
+                </td>
+            </tr>
+            <tr>
+                <td><b>Nota:</b></td>
+                <td colspan="4"><input type="text" id="proafiObservaciones" name="proafiObservaciones" maxlength="140" value="" style="width: 99%"></td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="2" align="right">
+                    <label class="checkbox inline">
+                        <input type="checkbox" id="indConsecutivo" name="indConsecutivo" value="S"><b>Generar No. de Consecutivo.</b>
+                    </label>
+                </td>
+                <td align="right">
+                    <input type="submit" class="btn btn-success" value="Recaudo" id="generar" name="generar" disabled="" style="width: 49%">
+                    <input type="button" class="btn btn-danger" value="Cancelar" name="cancelar" onclick="location = 'http://pila.tidelta.com/pila/facafiliacion'" style="width: 48.5%">
+                </td>
+            </tr>
+        </tbody></table>
+        </form>
+    
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/autoNumeric-1.9.22.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/public/js/jquery-ui.min-1.9.2.js"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/views/facindividual/js/facCuentasBancos.js?20230801"></script>
+    <script type="text/javascript" src="http://pila.tidelta.com/pila/views/facafiliacion/js/facafiliacion.js?20230801"></script>            </div>
+            </contenido>
+            <footer>
+            </footer>
+        </div>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-2NZE272KFW');
+        </script>
+    
+    <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-1" tabindex="0" style="z-index: 1; display: none;"></ul><div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all" id="ui-id-2" tabindex="0" style="z-index: 1; display: none;"></ul></body></html>
